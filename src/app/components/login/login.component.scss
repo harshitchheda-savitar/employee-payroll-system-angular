@@ -1,0 +1,176 @@
+*{
+    box-sizing: border-box;
+}
+
+.header{
+    padding: 15px 0;
+    background-color: white;
+}
+
+.header-title-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid green;
+}
+
+.logo-content{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0px solid green;
+}
+
+.logo-content-img{
+    border: 0px solid #42515f;
+}
+
+.title-text{
+    font:normal normal bold 20px/25px Monserrat;
+    letter-spacing: 0px;
+    color: #82a70c;
+    text-transform: capitalize;
+}
+
+.title-part2{
+    color: #42515f;
+}
+
+.form-content{
+    padding: 15px 0;
+    min-height: calc(100%-80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border: 0px solid green;
+}
+
+.login-form{
+    width: 35%;
+    padding: 44px 60px;
+}
+
+.form-head-title{
+    font:normal normal bold 24px/37px Roboto;
+    letter-spacing:0px;
+    color: #42515f;
+    text-transform: capitalize;
+    opacity: 1;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.inner-form{
+    background: #ffffff 0% 0% no-repeat border-box;
+    box-shadow: 0px 3px 6px #000029;
+    border:1px solid#f5f5f5;
+    border-radius: 8px;
+    opacity:1;
+}
+
+.form-row-content{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+    justify-content: center;
+    border:0px solid green;
+}
+
+.label-field{
+    min-width: 100px;
+    font-weight: bold;
+}
+
+label{
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.text{
+    font-size: 16px;
+    color: #42515f;
+    opacity: 1;
+    font-family: Roboto;
+}
+
+.input-field{
+    border: 0px solid#ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.input-field[placeholder]{
+    font-style: italic;
+    font-size: 15px;
+}
+
+.input-field-error{
+    font-size:12px;
+    font-style:italic;
+    color:red;
+}
+
+.button{
+    font-size: 15px;
+    font-family: Roboto;
+    color: white;
+    letter-spacing: 0px;
+    background-color: #42515f;
+    opacity: 1;
+    font-weight: 400;
+    border: 1px solid#707070;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[disabled]:hover {
+    cursor:not-allowed;
+ }
+
+@media screen and (min-width : 280px) and (max-width:1100px){
+    .login-form{
+        width: 60%;
+        padding: 44px 60px;
+    }
+}
+
+
+@media screen  and (min-width:280px) and (max-width:600px){
+    .login-form{
+        width: 120%;
+        padding: 44px 60px;
+    }
+
+    .form-row-content{
+        display: flex;
+        flex-direction: column;
+        margin: 10px 10px;
+        justify-content: center;
+        border:0px solid green;
+    }
+
+    label{
+        padding: 12px 12px 12px 12px;
+        display: inline-block;
+    }
+
+    .input-field{
+        margin: 0 12px;
+    }
+
+    .input-field[placeholder]{
+        font-style: italic;
+        font-size: 10px;
+    }
+
+    .button{
+        width: 40%;
+        margin: 0 auto;
+        
+        font-size: 12px;
+    }
+}

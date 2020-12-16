@@ -1,0 +1,41 @@
+<header class="header-title-content header">
+    <div class="logo-content">
+        <a href="#">
+            <img class="logo-content-img" src=".\assets\images\logo.png" alt="employee payroll system logo">
+        </a>&nbsp;
+        <div>
+            <span class="title-text">EMPLOYEE</span><br>
+            <span class="title-text title-part2">PAYROLL</span>
+        </div>
+    </div>
+</header>
+<div class="form-content">
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit();">
+        <div class="form-head-title">Log In</div>
+        <div class="inner-form">
+            <div class="form-row-content">
+
+                <mat-form-field appearance="outline">
+                    <mat-label class="label-field text">Username</mat-label>
+                    <input matInput class="input-field" type="text" placeholder="Enter your username here"
+                        formControlName="userName" (keyup)="onInput();" autocomplete="false">
+                    <mat-error class="input-field-error" *ngIf="loginForm.get('userName').invalid">Username Required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-row-content">
+                <mat-form-field appearance="outline">
+                    <mat-label class="label-field text">Password</mat-label>
+                    <input matInput class="input-field" type="password" placeholder="Enter your Password here"
+                        formControlName="password" (keyup)="onInput();">
+                    <mat-error class="input-field-error" *ngIf="loginForm.get('password').invalid">Password Required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-row-content">
+                <button mat-raised-button type="submit" class="button" id="submitButton" [disabled]="isDisabled">Log
+                    In</button>
+            </div>
+        </div>
+    </form>
+</div>
