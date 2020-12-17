@@ -11,8 +11,6 @@ import { SystemUserService } from 'src/app/service/system-user/system-user.servi
 })
 export class LoginComponent implements OnInit {
 
-  //TODO -loader
-
   isDisabled: boolean;
   isLoading: boolean;
   hidePassword: boolean;

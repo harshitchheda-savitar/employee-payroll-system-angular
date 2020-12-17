@@ -10,12 +10,14 @@ import { SystemUserService } from './service/system-user/system-user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './material-module';
 import { LoaderComponent } from './components/loader/loader.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    LoaderComponent
+    LoaderComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
