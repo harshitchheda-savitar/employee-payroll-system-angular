@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SystemUserService } from 'src/app/service/system-user.service';
+import { GlobalService } from 'src/app/service/global/global.service';
+import { SystemUserService } from 'src/app/service/system-user/system-user.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   isDisabled: boolean;
   loginForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private router: Router, private userService: SystemUserService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private userService: SystemUserService, private globalService: GlobalService) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -32,11 +33,13 @@ export class LoginComponent implements OnInit {
     this.userService.userLoginCredsPost(this.loginForm.value)
       .subscribe(data => {
         console.log(data);
-        if(data.statusCode == 200)
-          localStorage.setItem("jwtToken",data.payload);
+        if (data.statusCode == 200)
+          localStorage.setItem("jwtToken", data.payload);
+        this.globalService.openSnackBar(data.message, "Close");
       },
         error => {
           console.log(error);
+          this.globalService.openSnackBar("Something went wrong", "Close");
         })
   }
 
