@@ -14,8 +14,7 @@
         <div class="form-head-title">Log In</div>
         <div class="inner-form">
             <div class="form-row-content">
-
-                <mat-form-field appearance="outline">
+                <mat-form-field class="form-input" appearance="outline">
                     <mat-label class="label-field text">Username</mat-label>
                     <input matInput class="input-field" type="text" placeholder="Enter your username here"
                         formControlName="userName" (keyup)="onInput();" autocomplete="false">
@@ -24,10 +23,12 @@
                 </mat-form-field>
             </div>
             <div class="form-row-content">
-                <mat-form-field appearance="outline">
+                <mat-form-field class="form-input" appearance="outline">
                     <mat-label class="label-field text">Password</mat-label>
-                    <input matInput class="input-field" type="password" placeholder="Enter your Password here"
-                        formControlName="password" (keyup)="onInput();">
+                    <input matInput class="input-field" [type]="hidePassword ? 'password' : 'text'"
+                        placeholder="Enter your Password here" formControlName="password" (keyup)="onInput();">
+                    <mat-icon matSuffix (click)="hidePassword = !hidePassword">
+                        {{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
                     <mat-error class="input-field-error" *ngIf="loginForm.get('password').invalid">Password Required
                     </mat-error>
                 </mat-form-field>

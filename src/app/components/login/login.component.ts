@@ -11,9 +11,11 @@ import { SystemUserService } from 'src/app/service/system-user/system-user.servi
 })
 export class LoginComponent implements OnInit {
 
-  //TODO -loader and snackbar
+  //TODO -loader
 
   isDisabled: boolean;
+  isLoading: boolean;
+  hidePassword: boolean;
   loginForm: FormGroup;
   constructor(private formBuilder: FormBuilder, private router: Router, private userService: SystemUserService, private globalService: GlobalService) { }
 
@@ -23,6 +25,7 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
     this.isDisabled = true;
+    this.hidePassword = true;
   }
 
   onSubmit() {

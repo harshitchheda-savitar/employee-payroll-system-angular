@@ -1,0 +1,34 @@
+@keyframes fadein {
+    0% {opacity: 0;}
+    100% {opacity: 100;}
+}
+
+.page-overlay-wrapper{
+    position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1009;
+background: rgba(240,233,233,0.5);
+}
+
+.circular-spinner {
+  width: 3%;
+  height: 8%;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  z-index: 100;
+  background-image: url(/../../assets/icons/loader.gif);
+  background-repeat: no-repeat;
+  background-size: 97%;
+}
+
+@media screen  and (min-width:280px) and (max-width:600px){
+  .circular-spinner{
+    width: 10%;
+    height: 20%;
+  }
+
+}
